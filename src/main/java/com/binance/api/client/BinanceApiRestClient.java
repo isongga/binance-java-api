@@ -11,6 +11,7 @@ import com.binance.api.client.domain.market.CandlestickInterval;
 import com.binance.api.client.domain.market.OrderBook;
 import com.binance.api.client.domain.market.TickerPrice;
 import com.binance.api.client.domain.market.TickerStatistics;
+import com.binance.api.client.domain.subaccount.SpotSummary;
 
 import java.util.List;
 
@@ -329,4 +330,8 @@ public interface BinanceApiRestClient {
    * @param listenKey listen key that identifies a data stream
    */
   void closeUserDataStream(String listenKey);
+
+
+  //sub-account
+  SpotSummary getSpotSummary(String email, int page, int size, Long recvWindow, Long timestamp);
 }

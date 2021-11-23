@@ -8,6 +8,7 @@ import com.binance.api.client.domain.account.request.*;
 import com.binance.api.client.domain.general.Asset;
 import com.binance.api.client.domain.general.ExchangeInfo;
 import com.binance.api.client.domain.market.*;
+import com.binance.api.client.domain.subaccount.SpotSummary;
 import retrofit2.Call;
 
 import java.util.List;
@@ -277,5 +278,11 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
 	@Override
 	public void closeUserDataStream(String listenKey) {
 		executeSync(binanceApiService.closeAliveUserDataStream(listenKey));
+	}
+
+	//sub-account
+	@Override
+	public SpotSummary getSpotSummary(String email, int page, int size, Long recvWindow, Long timestamp) {
+		return executeSync(binanceApiService.getSpotSummary(email, page, size, recvWindow, timestamp));
 	}
 }

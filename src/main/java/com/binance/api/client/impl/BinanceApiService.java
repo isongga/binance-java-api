@@ -13,6 +13,7 @@ import com.binance.api.client.domain.general.Asset;
 import com.binance.api.client.domain.general.ExchangeInfo;
 import com.binance.api.client.domain.general.ServerTime;
 import com.binance.api.client.domain.market.*;
+import com.binance.api.client.domain.subaccount.SpotSummary;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -329,6 +330,13 @@ public interface BinanceApiService {
             @Query("swapId") String swapId,
             @Query("recvWindow") Long recvWindow,
             @Query("timestamp") Long timestamp);
+
+    //sub-account
+    //sub account
+    @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @GET("/sapi/v1/sub-account/spotSummary")
+    Call<SpotSummary> getSpotSummary(@Query("email") String email, @Query("page") int page, @Query("size") int size, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
+
 
 
 }
