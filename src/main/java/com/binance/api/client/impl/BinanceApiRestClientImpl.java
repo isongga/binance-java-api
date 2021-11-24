@@ -285,4 +285,9 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
 	public SpotSummary getSpotSummary(String email, int page, int size, Long recvWindow, Long timestamp) {
 		return executeSync(binanceApiService.getSpotSummary(email, page, size, recvWindow, timestamp));
 	}
+
+	@Override
+	public AccountSnapshot getAccountSnapshot(String type, Long startTime, Long endTime, int limit, Long recvWindow, Long timestamp) {
+		return executeSync(binanceApiService.getAccountSnapshot(type, startTime, endTime, limit, recvWindow, timestamp));
+	}
 }

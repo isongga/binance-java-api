@@ -337,6 +337,9 @@ public interface BinanceApiService {
     @GET("/sapi/v1/sub-account/spotSummary")
     Call<SpotSummary> getSpotSummary(@Query("email") String email, @Query("page") int page, @Query("size") int size, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
 
-
+    //sub account
+    @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @GET("/sapi/v1/accountSnapshot")
+    Call<AccountSnapshot> getAccountSnapshot(@Query("type") String type, @Query("startTime") Long startTime, @Query("endTime") Long endTime, @Query("limit") int limit, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
 
 }
