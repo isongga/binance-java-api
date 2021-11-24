@@ -336,4 +336,6 @@ public interface BinanceApiRestClient {
   SpotSummary getSpotSummary(String email, int page, int size, Long recvWindow, Long timestamp);
 
   AccountSnapshot getAccountSnapshot(String type, Long startTime, Long endTime, int limit, Long recvWindow, Long timestamp);
+
+  AccountOption getAccountOption(Long recvWindow, Long timestamp);
 }

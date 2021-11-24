@@ -290,4 +290,9 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
 	public AccountSnapshot getAccountSnapshot(String type, Long startTime, Long endTime, int limit, Long recvWindow, Long timestamp) {
 		return executeSync(binanceApiService.getAccountSnapshot(type, startTime, endTime, limit, recvWindow, timestamp));
 	}
+
+	@Override
+	public AccountOption getAccountOption(Long recvWindow, Long timestamp) {
+		return executeSync(binanceApiService.getAccountOption(recvWindow, timestamp));
+	}
 }
