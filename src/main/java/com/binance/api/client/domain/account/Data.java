@@ -1,6 +1,7 @@
 package com.binance.api.client.domain.account;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author hongjie wang
@@ -9,6 +10,7 @@ import java.math.BigDecimal;
  */
 public class Data {
     private BigDecimal totalAssetOfBtc;
+    private List<Balance> balances;
 
     public BigDecimal getTotalAssetOfBtc() {
         return totalAssetOfBtc;
@@ -16,5 +18,13 @@ public class Data {
 
     public void setTotalAssetOfBtc(BigDecimal totalAssetOfBtc) {
         this.totalAssetOfBtc = totalAssetOfBtc;
+    }
+
+    public List<Balance> getBalances() {
+        return balances;
+    }
+
+    public void setBalances(List<Balance> balances) {
+        this.balances = balances;
     }
 }

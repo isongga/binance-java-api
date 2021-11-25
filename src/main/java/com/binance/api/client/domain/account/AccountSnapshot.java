@@ -8,7 +8,25 @@ import java.util.List;
  * @date 2021/11/24 10:40 上午
  */
 public class AccountSnapshot {
+    private Integer code;
+    private String msg;
     private List<SnapshotVo> snapshotVos;
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public List<SnapshotVo> getSnapshotVos() {
         return snapshotVos;
